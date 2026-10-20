@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -29,9 +30,13 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        if(savedInstanceState != null){
+            punkty = savedInstanceState.getInt("PUNKTY", 0);
+        }
         buttonPlus = findViewById(R.id.button);
         buttonMinus = findViewById(R.id.button2);
         textView = findViewById(R.id.Textviewpunkty);
+        textView.setText(punkty + "");
 
         buttonMinus.setOnClickListener(
                 new View.OnClickListener() {
@@ -90,5 +95,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Log.i("CZAS", "Wywołana metoda onResume");
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.i("CZAS", "wywołana metoda od save instant state");
+        outState.putInt("PUNKTY", punkty);
     }
 }
