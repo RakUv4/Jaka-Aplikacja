@@ -1,6 +1,7 @@
 package com.example.jakasaplikacja;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -50,8 +51,44 @@ public class MainActivity extends AppCompatActivity {
                         textView.setText(Integer.toString(punkty));
                     }
                 }
-
-
         );
+        Log.i("CZAS", "Wywołana metoda onCreate");
+        
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i("CZAS", "Wywołana metoda onStart");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i("CZAS", "Wywołana metoda onPause");
+        
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("CZAS", "Wywołana metoda onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i("CZAS", "Wywołana metoda onDestroy");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i("CZAS", "Wywołana metoda onRestart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i("CZAS", "Wywołana metoda onResume");
     }
 }

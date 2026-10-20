@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="+" />
+        android:text="-" />
 
     <TextView
         android:id="@+id/Textviewpunkty"
@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="_"
+        android:text="+"
 
         />
 
